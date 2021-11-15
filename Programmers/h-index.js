@@ -6,11 +6,6 @@ function solution(citations) {
         return b - a;
     })    
     
-    console.log("요건 배열 선언한거");
-    console.log(arr);
-    console.log("원본");
-    console.log(citations);
-    
     for (let i = 0; i<arr.length; i++) {
              if (i < arr[i]) {
                  answer++;
@@ -22,8 +17,10 @@ function solution(citations) {
 }
 
 const arr = [3, 0, 6, 1, 5];
+const arr2 = [3, 2, 4, 1, 5];
 
 solution(arr)
+solution(arr2)
 
-console.log(arr);
-console.log(arr.sort((a,b) => b - a));
+ console.log(arr);
+ console.log(arr.sort((a,b) => b - a));
