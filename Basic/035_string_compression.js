@@ -17,4 +17,5 @@ for (let i of input_str) {
     }
 }
 
+console.log("case 1");
 console.log(result_str);
