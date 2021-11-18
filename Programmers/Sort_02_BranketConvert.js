@@ -12,8 +12,7 @@ function solution(p) {
     var answer = '';
     // u, v 값 선언
     let u = "";
-    let v = "";
-    const stack = [];
+    let v = "";    
 
     // 1번
     // 입력이 빈 문자열인 경우 빈 문자열을 반환.
@@ -24,6 +23,7 @@ function solution(p) {
     // 2번
     let left = 0;
     let right = 0;
+    const stack = [];
      for (let i = 0; i < p.length; i++) {
         if (p[i] === '(') {
             stack.push(true);
