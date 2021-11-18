@@ -32,5 +32,8 @@ function mathBrackets(arr) {
 }
 
 const n = '((())'.split('');
+const n2 = ')('.split('');
 console.log(n);
 console.log(mathBrackets(n));
+console.log("test2");
+console.log(mathBrackets(n2));
