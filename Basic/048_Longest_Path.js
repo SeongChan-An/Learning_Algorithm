@@ -60,7 +60,7 @@ function solution (n, visited) {
     // 그래프에서 각 값의 요소에 방문
     for (let next_node in graph[node]) {
         n.push(graph[node][next_node]);
-        
+
         max.push(length, solution(n, visited));
         length = Math.max.apply(null, max);
 
@@ -70,5 +70,129 @@ function solution (n, visited) {
     return length;
 }
 
+////////////////////////////////////////////////////////////////
+/* 
+디버그
+1회차
+function solution (n, visited) {            // n == [1], visited == []
+    // 가장 마지막에 있는 요소를 노드에      
+    let node = n[n.length-1]                // node == 1, n==[1], visited =[]
+    let length = 0;                         // length == 0, node == 1, n == [1], visited == []
+
+    if (node == end) {                      // Pass
+        return visited.length
+    }
+
+    if (visited.includes(node)) {
+        return visited.length;
+    } else {
+        visited.push(node);                 // visited == [1]    
+    }
+
+    let max = [];
+
+    // 그래프에서 각 값의 요소에 방문
+    for (let next_node in graph[node]) {    // graph 1 : 2, 3, 4,
+        n.push(graph[node][next_node]);     // n = [1, 2]
+
+        max.push(length, solution(n, visited));
+        length = Math.max.apply(null, max);
+
+        queue.pop();
+    }
+
+    return length;
+}
+
+1회차 재귀
+function solution (n, visited) {            // n == [1, 2], visited == [1]
+    // 가장 마지막에 있는 요소를 노드에      
+    let node = n[n.length-1]                // node == 2, n==[1,2], visited =[1]
+    let length = 0;                         // length == 0, node == 2, n == [1,2], visited == [1]
+
+    if (node == end) {                      // Pass
+        return visited.length
+    }
+
+    legnth == 0,
+    node == 2,
+    n == [1,2],
+    visited == [1, 2]
+
+    if (visited.includes(node)) {
+        return visited.length;
+    } else {
+        visited.push(node);                 // visited == [1]    
+    }
+
+    let max = [];
+
+    // 그래프에서 각 값의 요소에 방문
+    for (let next_node in graph[node]) {    // graph 2 : 1, 3, 4, 5, 6
+        n.push(graph[node][next_node]);     // n = [1, 2. 1]
+
+        max.push(length, solution(n, visited));
+        length = Math.max.apply(null, max);
+
+        queue.pop();
+    }
+
+    return length;
+}
+
+1회차 재귀의 재귀 
+function solution (n, visited) {            // n == [1, 2, 1], visited == [1, 2]
+    // 가장 마지막에 있는 요소를 노드에      
+    let node = n[n.length-1]                // node == 1, n==[1,2], visited =[1]
+    let length = 0;                         // length == 0, node == 2, n == [1,2], visited == [1]
+
+    if (node == end) {                      // Pass
+        return visited.length
+    }
+
+    legnth == 0,
+    node == 2,
+    n == [1,2],
+    visited == [1, 2]
+
+    if (visited.includes(node)) {
+        return visited.length;              // 2 반환 
+    } else {
+        visited.push(node);                 
+    }
+    ...
+}
+1회차 진행
+    // 그래프에서 각 값의 요소에 방문
+    for (let next_node in graph[node]) {        // graph 2 : 1, 3, 4, 5, 6
+        n.push(graph[node][next_node]);         // n = [1, 2. 1]
+
+        max.push(length, solution(n, visited));     //  length == 0, sol(n, vitited) == 2
+        length = Math.max.apply(null, max);         // 2
+
+        queue.pop();                             // 1, 2, 1 에서 1 반환
+    }
+
+    return length;
+
+2회차 진행
+    max == [0, 2]
+    legnth == 2,
+    node == 2,
+    n == [1,2],
+    visited == [1, 2]
+    graph[node] = [1, 3, 4, 5, 6]
+    next_node = 1
+
+    // 그래프에서 각 값의 요소에 방문
+    for (let next_node in graph[node]) {    // graph 2 : 1, 3, 4, 5, 6
+        n.push(graph[node][next_node]);     // n = [1, 2. 3]
+
+        max.push(length, solution(n, visited)); length == 2
+        length = Math.max.apply(null, max);
+
+        queue.pop();
+    }
+*/
 
 
