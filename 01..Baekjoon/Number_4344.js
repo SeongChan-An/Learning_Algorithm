@@ -44,6 +44,8 @@ for(let i = 1; i <= testCaseNum; ++i) {
 function solution(number, testCase) {
     console.log("Case : ", number);
     console.log("testCase : ", testCase);
+
+    
 }
 
 solution(inputC, inputTestCase)
