@@ -1,7 +1,7 @@
 // 백준에서 문제를 풀기위한 기본 Template
 
 const fs = require('fs');
-const filePath = process.platform === 'linux' ? '/dev/stdin' : '01..Baekjoon/Number_15649_N_and_M_01.txt';
+const filePath = process.platform === 'linux' ? '/dev/stdin' : '01..Baekjoon/warm-up/Number_15649_N_and_M_01.txt';
 let input = fs.readFileSync(filePath).toString();
 // console.log(input);
 
