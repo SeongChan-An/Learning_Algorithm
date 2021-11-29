@@ -68,3 +68,11 @@ console.log(solution(user_input));
 // // 정규표현식
 // let re = new RegExp(8, "g");
 // console.log(result.match(re).length);
+
+// function countEight (number) {
+//     let array = Array.from(new Array(number), (x,i) => i + 1)
+//     return array.join("").split("8").length-1;
+//   }
+  
+  
+//   Array.apply( null, Array( 10000 ) ).map( ( v, i ) => { return i } ).join( "" ).match( /8/g ).length
