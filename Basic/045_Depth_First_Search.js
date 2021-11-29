@@ -41,9 +41,9 @@ let graph2 = {
 }
 
 function dfs(graph, start) {
-    let visited = [];
     // stack을 배열로 구현하고 (class로 할 수 도 있음)
-    let stack = [start];
+     let visited = [];
+   let stack = [start];
 
     while (stack.length != 0) {
         let n = stack.pop();
