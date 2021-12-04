@@ -27,13 +27,13 @@ console.log(tempArr);
 // 비교해서 저장할 객체 
 let obj = {};
 tempArr.forEach((e) => {
-    [...e].forEach((el, id) => {
+    [...e].forEach((el, idx) => {
       if (obj[el] === undefined) {
           console.log(e.length, id);
-        obj[el] = Math.pow(10, e.length - 1 - id);
+        obj[el] = Math.pow(10, e.length - 1 - idx);
       } else {
         console.log(e.length, id);
-        obj[el] += Math.pow(10, e.length - 1 - id);
+        obj[el] += Math.pow(10, e.length - 1 - idx);
       }
     });
   });
