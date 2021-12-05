@@ -35,4 +35,5 @@ for (let i = 1; i < Category; i++) {
 }
 console.log(count);
 
-
+// ++
+// https://github.com/deli-ght/algorithm/blob/main/week2/ag-1931.md
