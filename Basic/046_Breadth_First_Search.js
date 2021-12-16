@@ -36,7 +36,7 @@ let graph2 = {
     'F': ['D']
 }
 
-function dfs(graph, start) {
+function bfs(graph, start) {
     let visited = [];
     let queue = [start];
 
@@ -56,5 +56,5 @@ function dfs(graph, start) {
     return visited;
 }
 
-console.log(dfs(graph, 'E'));
-console.log(dfs(graph2, 'E'));
+console.log(bfs(graph, 'E'));
+console.log(bfs(graph2, 'E'));
