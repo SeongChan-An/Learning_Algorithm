@@ -11,11 +11,11 @@ let input = fs.readFileSync(filePath).toString().trim().split("\n");
 
 const N = +input.shift();
 // input = input[0].split(" ").map(el => +el);
-console.log(input);
+// console.log(input);
 const nums = input.shift().split(" ").map(e => Number(e))
 const list = [nums[0]]
-console.log(nums);
-console.log(list);
+// console.log(nums);
+// console.log(list);
 
 function solution(input) {
     const lowerBound = (target) => {

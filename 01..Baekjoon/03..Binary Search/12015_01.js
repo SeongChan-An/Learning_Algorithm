@@ -13,19 +13,42 @@ let input = fs.readFileSync(filePath).toString().trim().split("\n");
 
 const number = +input.shift();
 input = input[0].split(" ").map(el => +el);
-console.log(input);
-
-function solution(_input) {
-    
-}
-solution(input);
-
+// console.log(input);
 // https://eine.tistory.com/entry/%EA%B0%80%EC%9E%A5-%EA%B8%B4-%EC%A6%9D%EA%B0%80%ED%95%98%EB%8A%94-%EB%B6%80%EB%B6%84-%EC%88%98%EC%97%B4LIS-Longest-Increasing-Subsequence
-
 /*
 알고리즘 설계
 가장 긴 증가부분수열
-
 */
-
 // https://namu.wiki/w/%EC%B5%9C%EC%9E%A5%20%EC%A6%9D%EA%B0%80%20%EB%B6%80%EB%B6%84%20%EC%88%98%EC%97%B4
+// 10 20 10 30 20 50
+function solution(_input) {
+    // _input.sort();
+    // console.log(_input);
+    let answer = [_input[0]];
+    // console.log(answer);
+
+   for (let i = 1; i < number; i++) {
+       const value = _input[i];      
+       if(answer[answer.length - 1] < value ) {
+           answer.push(value);
+       } else {
+        let min = 0;
+        let max = answer.length;
+        let middle = parseInt((min + max) / 2);
+
+        while(min < max) {
+            middle = parseInt((min + max) / 2);
+
+            if (answer[middle] < value ) {
+                min = middle + 1;
+            } else {
+                max = middle;
+            } 
+        }
+        answer[min] = value;
+       }
+   }
+   console.log(answer.length);
+}
+
+solution(input);
